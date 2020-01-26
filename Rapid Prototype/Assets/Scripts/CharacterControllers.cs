@@ -31,4 +31,11 @@ public class CharacterControllers : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
